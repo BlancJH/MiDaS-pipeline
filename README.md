@@ -107,6 +107,18 @@ pip install openvino
 
    Use `--save_npy` to additionally store the raw depth predictions as NumPy arrays.
 
+#### Streaming depth arrays
+
+The `stream_depth.py` script forwards each predicted depth map to another
+process using HTTP POST. Simply provide the destination URL:
+
+```shell
+python stream_depth.py --server_url http://localhost:8000/depth
+```
+
+Use `--camera_source` to select a different camera or stream and `--model_type`
+to choose another model.
+
 #### via Docker
 
 1) Make sure you have installed Docker and the
